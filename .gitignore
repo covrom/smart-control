@@ -1,0 +1,74 @@
+# ================================================================
+# Go Build Artifacts
+# ================================================================
+*.exe
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# Coverage, Benchmark, and Profile Reports
+*.coverprofile
+*.cov
+*.prof
+
+# Delve Debug Binary
+__debug_bin
+
+# Go Workspaces (Go 1.18+)
+go.work
+go.work.sum
+
+# Vendor (if used with `go mod vendor`)
+vendor/
+
+# ================================================================
+# Build Output Directories
+# ================================================================
+bin/
+build/
+dist/
+out/
+
+# ================================================================
+# Logs and Temporary Files
+# ================================================================
+*.log
+logs/
+tmp/
+.cache/
+sent_items.txt
+
+# ================================================================
+# Editor and IDE Settings
+# ================================================================
+# .vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+*.bak
+
+# ================================================================
+# Environment Configuration Files
+# ================================================================
+.env
+.env.*
+!.env.example
+
+# ================================================================
+# OS-Specific Files
+# ================================================================
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Icon?
+
+# ================================================================
+# Generated Files (Optional: Keep if you use code generation)
+# ================================================================
+generated/
+*.gen.go
+
+SMARTDataCollector.exe

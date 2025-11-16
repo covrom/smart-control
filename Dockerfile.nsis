@@ -1,0 +1,9 @@
+FROM debian
+
+RUN apt-get update -y && \
+    DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y nsis nsis-doc nsis-pluginapi && \
+    rm -rf /var/lib/apt/lists/*
+
+WORKDIR /installer
+
+ENTRYPOINT [ "makensis", "-V4", "script.nsi" ]

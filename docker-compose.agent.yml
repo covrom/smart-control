@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  smart-control:
+    build: .
+    container_name: smart-control
+    restart: unless-stopped
+    privileged: true
+    volumes:
+      - /proc:/host/proc:ro
+    environment:
+      MODE: agent
+      HTTP_AUTH_TOKEN: # auth token from server
+      SMART_HOSTNAME: # agent name
+      COLLECTOR_URL: # http://192.168.1.1:18800/smart/report
+      CRON_SCHEDULE: # "55 23 * * *"
+
+

@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  smart-control:
+    build: .
+    container_name: smart-control
+    restart: unless-stopped
+    privileged: true
+    ports:
+      - 18800:8000
+    volumes:
+      - /proc:/host/proc:ro
+      - reports_data:/var/lib/smart_reports_data
+    environment:
+      MODE: agent,server
+      # server envs
+      OPENAI_BASE_URL: # http://192.168.1.1:8080/v1
+      OPENAI_API_KEY: # 1234
+      OPENAI_MODEL: # qwen3-30b-a3b-instruct-2507
+      TELEGRAM_BOT_TOKEN: # TELEGRAM:BOT-TOKEN
+      TELEGRAM_CHAT_ID: # telegram user id (number): 111111111
+      # agent envs
+      HTTP_AUTH_TOKEN: # auth security token between agents and server
+      SMART_HOSTNAME: # agent name
+      COLLECTOR_URL: # http://smart-control:8000/smart/report
+      CRON_SCHEDULE: # "55 23 * * *"
+
+volumes:
+  reports_data:

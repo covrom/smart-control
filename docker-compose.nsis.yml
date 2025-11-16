@@ -1,0 +1,9 @@
+version: "3.3"
+services:
+  nsisbuilder:
+    container_name: nsisbuilder
+    build:
+      context: .
+      dockerfile: ./Dockerfile.nsis
+    volumes:
+      - ./dist:/installer
